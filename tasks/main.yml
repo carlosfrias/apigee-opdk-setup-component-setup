@@ -1,0 +1,13 @@
+---
+# tasks file for apigee-opdk-setup-component-setup
+- name: Setup component with no config file
+  shell: "{{ apigee_service }} {{ component }} setup"
+  when: config is not defined or config | trim | length == 0
+
+- name: Setup component with config file
+  shell: "{{ apigee_service }} {{ component }} setup -f {{ config }}"
+  when: config is defined and config | trim | length > 0
+
+
+
+
