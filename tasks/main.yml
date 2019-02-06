@@ -5,7 +5,7 @@
   when: config is not defined or config | trim | length == 0
 
 - name: Setup component with config file
-  shell: "{{ apigee_service }} {{ component }} setup -f {{ config }}"
+  shell: "{{ apigee_service }} {{ component }} setup -f {{ target_response_file_path }}"
   when: config is defined and config | trim | length > 0
 
 
